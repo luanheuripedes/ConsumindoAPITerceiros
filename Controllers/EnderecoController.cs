@@ -19,6 +19,7 @@ namespace IntegraBrasilApi.Controllers
             _enderecoService = enderecoService;
         }
 
+        [HttpGet("buscar/{cep}")]
         public async Task<IActionResult> BuscarEndereco([FromRoute] string cep){
             var response = await _enderecoService.BuscarEndereco(cep);
 

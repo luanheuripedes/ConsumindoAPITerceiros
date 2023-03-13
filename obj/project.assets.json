@@ -768,11 +768,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Cpu\\Documents\\LUAN\\Consumindo API de Terceiros\\IntegraBrasilApi\\IntegraBrasilApi.csproj",
+      "projectUniqueName": "C:\\Users\\Cpu\\Documents\\LUAN\\Consumindo API de Terceiros\\IntegraBrasilApi\\IntegraBrasilApi.csproj",
       "projectName": "IntegraBrasilApi",
-      "projectPath": "c:\\Users\\Cpu\\Documents\\LUAN\\Consumindo API de Terceiros\\IntegraBrasilApi\\IntegraBrasilApi.csproj",
+      "projectPath": "C:\\Users\\Cpu\\Documents\\LUAN\\Consumindo API de Terceiros\\IntegraBrasilApi\\IntegraBrasilApi.csproj",
       "packagesPath": "C:\\Users\\Cpu\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Cpu\\Documents\\LUAN\\Consumindo API de Terceiros\\IntegraBrasilApi\\obj\\",
+      "outputPath": "C:\\Users\\Cpu\\Documents\\LUAN\\Consumindo API de Terceiros\\IntegraBrasilApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -785,6 +785,8 @@
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://192.168.0.44:5555/v3/index.json": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -842,5 +844,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://192.168.0.44:5555/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }
