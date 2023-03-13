@@ -63,7 +63,30 @@ namespace IntegraBrasilApi.Rest
 
         public async Task<ResponseGenericoDTO<BancoModel>> BuscarBanco(string codigoBanco)
         {
-            throw new NotImplementedException();
+            var request = new HttpRequestMessage(HttpMethod.Get, $"https://brasilapi.com.br/api/banks/v1/{codigoBanco}");
+
+            var response = new ResponseGenericoDTO<BancoModel>();
+
+            using (var client = new HttpClient())
+            {
+                var responseBrasilAPI = await client.SendAsync(request);
+                var conteudoResponse = await responseBrasilAPI.Content.ReadAsStringAsync();
+                var objResponse = JsonSerializer.Deserialize<BancoModel>(conteudoResponse);
+
+
+                if (responseBrasilAPI.IsSuccessStatusCode)
+                {
+                    response.CodigoHttp = responseBrasilAPI.StatusCode;
+                    response.DadosRetorno = objResponse;
+                }
+                else
+                {
+                    response.CodigoHttp = responseBrasilAPI.StatusCode;
+                    response.ErroRetorno = JsonSerializer.Deserialize<ExpandoObject>(conteudoResponse);
+                }
+            }
+
+            return response;
         }
 
         
