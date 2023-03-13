@@ -1,3 +1,4 @@
+using AutoMapper;
 using IntegraBrasilApi.DTOs;
 using IntegraBrasilApi.Interfaces;
 using System;
@@ -9,6 +10,15 @@ namespace IntegraBrasilApi.Services
 {
     public class BancoService : IBancoService
     {
+        private readonly IMapper _mapper;
+        private readonly IBrasilAPi _brasilAPI;
+
+        public BancoService(IMapper mapper, IBrasilAPi brasilAPI)
+        {
+            _mapper = mapper;
+            _brasilAPI = brasilAPI;
+        }
+
         public async Task<ResponseGenericoDTO<BancoResponseDTO>> BuscarBanco(string codigoBanco)
         {
             throw new NotImplementedException();
