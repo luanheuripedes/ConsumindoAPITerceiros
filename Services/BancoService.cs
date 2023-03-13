@@ -21,12 +21,15 @@ namespace IntegraBrasilApi.Services
 
         public async Task<ResponseGenericoDTO<BancoResponseDTO>> BuscarBanco(string codigoBanco)
         {
-            throw new NotImplementedException();
+            var banco = await _brasilAPI.BuscarBanco(codigoBanco);
+            return _mapper.Map<ResponseGenericoDTO<BancoResponseDTO>>(banco);
+            
         }
 
         public async Task<ResponseGenericoDTO<List<BancoResponseDTO>>> BuscarTodos()
         {
-            throw new NotImplementedException();
+            var bancos = await _brasilAPI.BuscarTodosBancos();
+            return _mapper.Map<ResponseGenericoDTO<List<BancoResponseDTO>>>(bancos);
         }
     }
 }
